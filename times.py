@@ -1,7 +1,9 @@
 import os, shutil
-import datetime, time
-import glob
 import exifread
+import datetime
+import time
+import glob
+
 
 #--------------------------------
 #--------Times Timelapse---------
@@ -14,21 +16,25 @@ import exifread
 #------------- 2014 -------------
 #--------------------------------
 
+print "\n"
 print "Greetings!"
 print "I'll help you extract specific image files at certain times."
 print "I need a bit of info before beginning."
+print "\n"
 
 print "What folder are the images located in?"
 
 p1 = raw_input("Folder: ")
 e = True #error
-while :
+while e:
 	if os.path.isdir(p1):
 		path = p1 + "/*.*"
 		e = False # no errors
 	else:
 		print "Enter a folder that exists."
 	  	p1 = raw_input("Folder: ")
+
+print "\n"
 
 # Prompts for date and time ranges
 print "What date ranges do you want to search?"
@@ -68,7 +74,7 @@ print "End date: %s" % e_date
 print "At Time: %s" % s_time
 print "------------------------"
 print "\n"
-print "Found!"
+print "Searching..."
 
 # Total number of images copied
 total = 0
@@ -107,7 +113,7 @@ for file in glob.glob(path):
 				if s_time <= img_time < e_time:
 
 					# Print to screen, increment total count, process image
-					print "File: %s was taken at %s" % (file, img_meta)
+					print "File: %s was taken on %s at %s" % (file, img_date, img_time)
 					total += 1
 					shutil.copy(file, dstdir)
 
