@@ -1,6 +1,7 @@
 ## Times Timelapse
 
-A tool used for extracting photos at certain times from timelapse sequence directory.
+A tool used for extracting photos at certain times of the day from a timelapse sequence directory. Useful, instead of manually selecting times in media browser like Adobe Bridge or PhotoMechanic.
+
 **Made by Steven Speicher, 2014.**
 
 ### Usage
